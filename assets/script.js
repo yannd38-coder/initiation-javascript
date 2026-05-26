@@ -28,3 +28,12 @@ flecheGauche.addEventListener("click", () => {
 flecheDroite.addEventListener("click", () => {
 	console.log("Clique sur fleche de droite")
 });
+const conteneurDots = document.querySelector(".dots")
+for (let i = 0; i < slides.length; i++) {
+	const dot = document.createElement("div");
+	dot.classList.add("dot");
+	if (i === 0) {
+		dot.classList.add("dot_selected");
+	}
+	conteneurDots.appendChild(dot);
+}
