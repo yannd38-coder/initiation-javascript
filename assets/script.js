@@ -53,12 +53,37 @@ flecheGauche.addEventListener("click", () => {
 	console.log("index actuel apres clic gauche:", indexCourant);
 })
 function mettreAJourPoints() {
-	const toutLesPoints = document.querySelectorAll("dot.dots");
+	const tousLesPoints = document.querySelectorAll(".dots .dot");
 	tousLesPoints.forEach((dot, index) => {
 		if (index === indexCourant) {
-			dot.classList.add("dot_selected"); 
+			dot.classList.add("dot_selected");
 		} else {
-			dot.classList.remove("dot_selected"); 
+			dot.classList.remove("dot_selected");
 		}
 	});
 }
+
+flecheDroite.addEventListener("click", () => {
+	indexCourant = indexCourant + 1;
+	if (indexCourant >= slides.length) {
+		indexCourant = 0;
+	}
+
+	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
+	texteBanner.innerHTML = slides[indexCourant].tagLine;
+	mettreAJourPoints();
+
+	console.log("index actuel apres clic droit:", indexCourant);
+});
+flecheGauche.addEventListener("click", () => {
+	indexCourant = indexCourant - 1;
+	if (indexCourant < 0) {
+		indexCourant = slides.length - 1;
+	}
+
+	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
+	texteBanner.innerHTML = slides[indexCourant].tagLine;
+	mettreAJourPoints();
+
+	console.log("index actuel apres clic gauche:", indexCourant);
+});
