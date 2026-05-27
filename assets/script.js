@@ -16,6 +16,9 @@ const slides = [
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+let indexCourant = 0;
+const imageBanner = document.querySelector(".banner-img");
+const texteBanner = document.querySelector("#banner p");
 //let baliseBanner = document.getElementById("banner");
 //console.log(baliseBanner);
 const flecheGauche = document.querySelector(".arrow_left");
@@ -38,14 +41,24 @@ for (let i = 0; i < slides.length; i++) {
 	conteneurDots.appendChild(dot);
 }
 flecheDroite.addEventListener("click", () => {
-	indexCourant = indexCourant +1;
+	indexCourant = indexCourant + 1;
 	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
-	textBanner.innerHTML = slides[indexCourant].tagLine;
+	texteBanner.innerHTML = slides[indexCourant].tagLine;
 	console.log("index actuel apres clic droit:", indexCourant);
 })
 flecheGauche.addEventListener("click", () => {
-	indexCourant = indexCourant -1;
+	indexCourant = indexCourant - 1;
 	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
-	textBanner.innerHTML = slides[indexCourant].tagLine;
+	texteBanner.innerHTML = slides[indexCourant].tagLine;
 	console.log("index actuel apres clic gauche:", indexCourant);
 })
+function mettreAJourPoints() {
+	const toutLesPoints = document.querySelectorAll("dot.dots");
+	tousLesPoints.forEach((dot, index) => {
+		if (index === indexCourant) {
+			dot.classList.add("dot_selected"); 
+		} else {
+			dot.classList.remove("dot_selected"); 
+		}
+	});
+}
