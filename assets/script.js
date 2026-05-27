@@ -37,3 +37,10 @@ for (let i = 0; i < slides.length; i++) {
 	}
 	conteneurDots.appendChild(dot);
 }
+flecheDroite addEventListener("click", () => {
+	indexCourant = +1;
+	imageBanner.src = ".assets/images/slideshow/" + slides[indexCourant].image;
+	textBanner.innerHTML = slides[indexCourant].tagLine;
+	console.log("index actuel apres clic droit:" indexCourant);
+
+})
