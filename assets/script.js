@@ -25,12 +25,6 @@ const flecheGauche = document.querySelector(".arrow_left");
 const flecheDroite = document.querySelector(".arrow_right");
 console.log(flecheGauche);
 console.log(flecheDroite);
-flecheGauche.addEventListener("click", () => {
-	console.log("Clique sur fleche de gauche")
-});
-flecheDroite.addEventListener("click", () => {
-	console.log("Clique sur fleche de droite")
-});
 const conteneurDots = document.querySelector(".dots")
 for (let i = 0; i < slides.length; i++) {
 	const dot = document.createElement("div");
