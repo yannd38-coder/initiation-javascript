@@ -33,19 +33,20 @@ for (let i = 0; i < slides.length; i++) {
 		dot.classList.add("dot_selected");
 	}
 	conteneurDots.appendChild(dot);
+	// debugger
 }
-flecheDroite.addEventListener("click", () => {
-	indexCourant = indexCourant + 1;
-	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
-	texteBanner.innerHTML = slides[indexCourant].tagLine;
-	console.log("index actuel apres clic droit:", indexCourant);
-})
-flecheGauche.addEventListener("click", () => {
-	indexCourant = indexCourant - 1;
-	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
-	texteBanner.innerHTML = slides[indexCourant].tagLine;
-	console.log("index actuel apres clic gauche:", indexCourant);
-})
+// flecheDroite.addEventListener("click", () => {
+// 	indexCourant = indexCourant + 1;
+// 	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
+// 	texteBanner.innerHTML = slides[indexCourant].tagLine;
+// 	console.log("index actuel apres clic droit:", indexCourant);
+// })
+// flecheGauche.addEventListener("click", () => {
+// 	indexCourant = indexCourant - 1;
+// 	imageBanner.src = "./assets/images/slideshow/" + slides[indexCourant].image;
+// 	texteBanner.innerHTML = slides[indexCourant].tagLine;
+// 	console.log("index actuel apres clic gauche:", indexCourant);
+// })
 function mettreAJourPoints() {
 	const tousLesPoints = document.querySelectorAll(".dots .dot");
 	tousLesPoints.forEach((dot, index) => {
@@ -56,7 +57,6 @@ function mettreAJourPoints() {
 		}
 	});
 }
-
 flecheDroite.addEventListener("click", () => {
 	indexCourant = indexCourant + 1;
 	if (indexCourant >= slides.length) {
@@ -69,6 +69,7 @@ flecheDroite.addEventListener("click", () => {
 
 	console.log("index actuel apres clic droit:", indexCourant);
 });
+
 flecheGauche.addEventListener("click", () => {
 	indexCourant = indexCourant - 1;
 	if (indexCourant < 0) {
